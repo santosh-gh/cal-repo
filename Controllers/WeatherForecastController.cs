@@ -13,7 +13,7 @@ namespace Calculation.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Very-COOL", "Bracing", "CHILLY", "COOL", "Mild", "WARM", "Balmy", "HOT", "SWELTERING"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
@@ -30,7 +30,7 @@ namespace Calculation.Controllers
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TempC = rng.Next(-20, 55),
+                TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
